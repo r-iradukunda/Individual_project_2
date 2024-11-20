@@ -11,7 +11,7 @@ class NewsRepository {
 
   Future<CategoriesNewsModel> fetchNewsCategoires(String category) async {
     String newsUrl =
-        'https://newsapi.org/v2/everything?q=$category&apiKey=8a5ec37e26f845dcb4c2b78463734448';
+        'https://newsapi.org/v2/everything?q=$category&apiKey=f65548aba4944814a5ab7fa5eaec80c9';
     final response = await http.get(Uri.parse(newsUrl));
     if (response.statusCode == 200) {
       final body = jsonDecode(response.body);
@@ -23,7 +23,7 @@ class NewsRepository {
   }
 
   Future<NewsChannelsHeadlinesModel> fetchNewsChannelHeadlinesApi(String newsChannel) async {
-    String newsUrl = 'https://newsapi.org/v2/top-headlines?sources=${newsChannel}&apiKey=8a5ec37e26f845dcb4c2b78463734448';
+    String newsUrl = 'https://newsapi.org/v2/top-headlines?sources=${newsChannel}&apiKey=f65548aba4944814a5ab7fa5eaec80c9';
     print(newsUrl);
     final response = await http.get(Uri.parse(newsUrl));
     print(response.statusCode.toString());
